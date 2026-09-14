@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Audio Controller",
+  "version": "1.0.0",
+  "description": "Download and control playback speed of audio files on web pages. Detects embedded audio and MP3 links, allowing users to adjust playback speed (0.25x to 2x) and download audio files.",
+  
+  "author": "Your Name",
+  "homepage_url": "https://github.com/yourusername/audio-controller",
+  
+  "permissions": ["activeTab", "scripting", "downloads"],
+  
+  "host_permissions": ["<all_urls>"],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Audio Controller - Download & Speed Control"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
